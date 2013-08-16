@@ -1,4 +1,3 @@
-
 # trigger-event
 
   Programmatically trigger a DOM event. Useful for testing mostly.
@@ -12,6 +11,7 @@
 ```js
 var trigger = require('trigger-event');
 trigger('keydown', { key: 'enter' });
+trigger('click', button, { meta: true });
 ```
 
 ## API
