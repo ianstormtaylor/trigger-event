@@ -11,17 +11,18 @@
   
 ```js
 var trigger = require('trigger-event');
-trigger('keydown', window, { key: 'enter' });
+trigger('keydown', { key: 'enter' });
 ```
 
-  Supported events:
+## API
 
-    click
-    dblclick
-    keydown
-    keyup
+### trigger(type, [element], [options])
 
-  For options, check out [`ianstormtaylor/create-event`](https://github.com/ianstormtaylor/create-event).
+  `type` can be either `click`, `dblclick`, `keydown` or `keyup`.
+
+  `element` defaults to `window`.
+
+  For `options`, check out [`ianstormtaylor/create-event`](https://github.com/ianstormtaylor/create-event).
 
 ## License
 
