@@ -9,7 +9,7 @@ it('should trigger a click event', function (done) {
     assert(true === e.ctrlKey);
     done();
   });
-  trigger('click', window, { ctrl: true });
+  trigger(window, 'click', { ctrl: true });
 });
 
 it('should trigger a dblclick event', function (done) {
@@ -17,7 +17,7 @@ it('should trigger a dblclick event', function (done) {
     assert(true === e.ctrlKey);
     done();
   });
-  trigger('dblclick', window, { ctrl: true });
+  trigger(window, 'dblclick', { ctrl: true });
 });
 
 it('should trigger a keydown event', function (done) {
@@ -25,7 +25,7 @@ it('should trigger a keydown event', function (done) {
     assert(27 === e.keyCode);
     done();
   });
-  trigger('keydown', window, { key: 'esc' });
+  trigger(window, 'keydown', { key: 'esc' });
 });
 
 it('should trigger a keyup event', function (done) {
@@ -33,7 +33,7 @@ it('should trigger a keyup event', function (done) {
     assert(27 === e.keyCode);
     done();
   });
-  trigger('keyup', window, { key: 'esc' });
+  trigger(window, 'keyup', { key: 'esc' });
 });
 
 });

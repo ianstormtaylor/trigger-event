@@ -2,7 +2,7 @@
   "name": "trigger-event",
   "repo": "ianstormtaylor/trigger-event",
   "description": "Programmatically trigger a DOM event. Useful for testing mostly.",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "license": "MIT",
   "keywords": ["event", "trigger", "dom", "element"],
   "dependencies": {
