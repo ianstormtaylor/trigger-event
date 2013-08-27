@@ -10,8 +10,14 @@
   
 ```js
 var trigger = require('trigger-event');
-trigger('keydown', { key: 'enter' });
-trigger('click', button, { meta: true });
+trigger(button, 'click', { meta: true });
+trigger(document, 'keydown', { key: 'enter' });
+```
+
+Shorthand for keys:
+
+```js
+trigger('keydown', { key: 'enter' })
 ```
 
 ## API
@@ -25,7 +31,7 @@ trigger('click', button, { meta: true });
     'keydown'
     'keyup'
 
-  Element will default to `window` if none is provided.
+  Element will default to `document` if none is provided.
 
   Default `options`:
 
