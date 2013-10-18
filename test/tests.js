@@ -1,39 +1,43 @@
 describe('trigger-event', function () {
 
-var assert = require('assert')
-  , bind = require('event').bind
-  , trigger = require('trigger-event');
+  var assert = require('assert');
+  var bind = require('event').bind;
+  var trigger = require('trigger-event');
 
-it('should trigger a click event', function (done) {
-  bind(window, 'click', function (e) {
-    assert(true === e.ctrlKey);
-    done();
+  beforeEach(function () {
+    this.el = document.createElement('div');
   });
-  trigger(window, 'click', { ctrl: true });
-});
 
-it('should trigger a dblclick event', function (done) {
-  bind(window, 'dblclick', function (e) {
-    assert(true === e.ctrlKey);
-    done();
+  it('should trigger a click event', function (done) {
+    bind(this.el, 'click', function (e) {
+      assert(true === e.ctrlKey);
+      done();
+    });
+    trigger(this.el, 'click', { ctrl: true });
   });
-  trigger(window, 'dblclick', { ctrl: true });
-});
 
-it('should trigger a keydown event', function (done) {
-  bind(window, 'keydown', function (e) {
-    assert(27 === e.keyCode);
-    done();
+  it('should trigger a dblclick event', function (done) {
+    bind(this.el, 'dblclick', function (e) {
+      assert(true === e.ctrlKey);
+      done();
+    });
+    trigger(this.el, 'dblclick', { ctrl: true });
   });
-  trigger(window, 'keydown', { key: 'esc' });
-});
 
-it('should trigger a keyup event', function (done) {
-  bind(window, 'keyup', function (e) {
-    assert(27 === e.keyCode);
-    done();
+  it('should trigger a keydown event', function (done) {
+    bind(this.el, 'keydown', function (e) {
+      assert(27 === e.keyCode);
+      done();
+    });
+    trigger(this.el, 'keydown', { key: 'esc' });
   });
-  trigger(window, 'keyup', { key: 'esc' });
-});
+
+  it('should trigger a keyup event', function (done) {
+    bind(this.el, 'keyup', function (e) {
+      assert(27 === e.keyCode);
+      done();
+    });
+    trigger(this.el, 'keyup', { key: 'esc' });
+  });
 
 });

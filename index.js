@@ -29,17 +29,5 @@ function trigger (el, type, options) {
   var e = create(type, options);
   el.dispatchEvent
     ? el.dispatchEvent(e)
-    : el.fireEvent(ieify(type), e);
-}
-
-
-/**
- * Convert a type into an IE-specific type.
- *
- * @param {String} type
- * @return {String}
- */
-
-function ieify (type) {
-  return 'on' + type[0].toUpperCase() + type.slice(1);
+    : el.fireEvent('on' + type, e);
 }
